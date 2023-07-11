@@ -19,7 +19,7 @@ export default {
                 black: colors.black,
                 white: colors.white,
                 slate: colors.slate,
-                gray: colors.truegray,
+                gray: colors.gray,
                 'blue': '#328af1',
                 'blue-hover': '#2879bd',
                 'yellow': '#ffc73c',
