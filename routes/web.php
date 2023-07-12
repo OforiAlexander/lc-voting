@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::view('/ideas', 'show');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
