@@ -48,14 +48,17 @@
                             class="bg-gray-200 text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 py-2 px-4 hover:bg-gray-300 transition duration-150 ease-in">
                             Open</div>
                         <button
+                        x-data="{ isOpen : false }"
+                        @click="isOpen = !isOpen"
                             class="relative bg-gray-100 hover:bg-gray-200 rounded-full h-7 transition duration-150 ease-in border py-2 px-4">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="currentColor"
                                 class="bi bi-three-dots" viewBox="0 0 16 16">
                                 <path style="color: rgba(39, 39, 39, 0.5)"
                                     d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                             </svg>
-                            <ul
-                                class="absolute w-44 text-left font-semibold ml-8 bg-white shadow-dialog rounded-xl py-3 hidden">
+                            <ul x-cloak x-show.transition.origin.top.left="isOpen" @click.away="isOpen = false"
+                                @keydown.escape.window="isOpen = false"
+                                class="absolute w-44 text-left font-semibold ml-8 bg-white shadow-dialog rounded-xl py-3">
                                 <li><a href="#"
                                         class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Mark
                                         as Spam</a></li>
@@ -72,12 +75,13 @@
 
     <div class="buttons-container flex items-center justify-between mt-6">
         <div class="flex items-center space-x-4  ml-6">
-            <div class="relative">
-                <button type="button"
+            <div x-data="{ isOpen: false }" class="relative">
+                <button @click="isOpen = !isOpen" type="button"
                     class="flex items-center justify-center w-32 h-11 text-white text-sm bg-blue font-semibold rounded-xl border border-blue hover:bg-blue-hover transition duration-150 ease-in px-6 py-3">
                     Reply
                 </button>
-                <div
+                <div x-cloak x-show.transition.origin.top.left="isOpen" @click.away="isOpen = false"
+                    @keydown.escape.window="isOpen = false"
                     class="absolute z-10 w-104 text-left font-semibold text-sm bg-white shadow-dialog rounded-xl mt-2">
                     <form action="" class="space-y-4 px-4 py-6">
                         <div>
@@ -103,8 +107,8 @@
                     </form>
                 </div>
             </div>
-            <div class="relative">
-                <button type="button"
+            <div x-data="{ isOpen: false }" class="relative">
+                <button @click="isOpen = !isOpen" type="button"
                     class="flex items-center justify-center h-11 w-36 text-sm bg-gray-200 font-semibold rounded-xl border border-gray-200 hover:border-gray-400 transition duration-150 ease-in px-6 py-3">
                     <span>
                         Set Status
@@ -115,43 +119,50 @@
                     </svg>
                 </button>
 
-                <div class="absolute z-20 w-76 text-left font-semibold text-sm bg-white shadow-dialog rounded-xl mt-2">
+                <div x-cloak x-show.transition.origin.top.left="isOpen" @click.away="isOpen = false"
+                    @keydown.escape.window="isOpen = false"
+                    class="absolute z-20 w-76 text-left font-semibold text-sm bg-white shadow-dialog rounded-xl mt-2">
                     <form action="" class="space-y-4 px-4 py-6">
                         <div class="space-y-2">
                             <div>
                                 <label class="inline-flex items-center">
-                                    <input type="radio" checked=""
-                                        class="bg-gray-200 text-green border-none" name="radio-direct" value="1">
+                                    <input type="radio" checked="" class="bg-gray-200 text-green border-none"
+                                        name="radio-direct" value="1">
                                     <span class="ml-2">Open</span>
                                 </label>
                             </div>
                             <div>
                                 <label class="inline-flex items-center">
-                                    <input class="bg-gray-200 text-red border-none" type="radio" name="radio-direct" value="2">
+                                    <input class="bg-gray-200 text-red border-none" type="radio"
+                                        name="radio-direct" value="2">
                                     <span class="ml-2">Option 2</span>
                                 </label>
                             </div>
                             <div>
                                 <label class="inline-flex items-center">
-                                    <input class="bg-gray-200 text-yellow border-none" type="radio" name="radio-direct" value="3">
+                                    <input class="bg-gray-200 text-yellow border-none" type="radio"
+                                        name="radio-direct" value="3">
                                     <span class="ml-2">Considering</span>
                                 </label>
                             </div>
                             <div>
                                 <label class="inline-flex items-center">
-                                    <input class="bg-gray-200 text-blue border-none" type="radio" name="radio-direct" value="3">
+                                    <input class="bg-gray-200 text-blue border-none" type="radio"
+                                        name="radio-direct" value="3">
                                     <span class="ml-2">In Progress</span>
                                 </label>
                             </div>
                             <div>
                                 <label class="inline-flex items-center">
-                                    <input class="bg-gray-200 text-green border-none" type="radio" name="radio-direct" value="3">
+                                    <input class="bg-gray-200 text-green border-none" type="radio"
+                                        name="radio-direct" value="3">
                                     <span class="ml-2">Implemented</span>
                                 </label>
                             </div>
                             <div>
                                 <label class="inline-flex items-center">
-                                    <input class="bg-gray-200 text-violet-900 border-none" type="radio" name="radio-direct" value="3">
+                                    <input class="bg-gray-200 text-violet-900 border-none" type="radio"
+                                        name="radio-direct" value="3">
                                     <span class="ml-2">Closed</span>
                                 </label>
                             </div>
@@ -183,10 +194,11 @@
                         </div>
                         <div>
                             <label class="inline-flex items-center font-normal">
-                              <input type="checkbox" name="notify_voters" class="rounded bg-gray-200" checked="">
-                              <span class="ml-2">Notify All Voters</span>
+                                <input type="checkbox" name="notify_voters" class="rounded bg-gray-200"
+                                    checked="">
+                                <span class="ml-2">Notify All Voters</span>
                             </label>
-                          </div>
+                        </div>
                     </form>
                 </div>
             </div>

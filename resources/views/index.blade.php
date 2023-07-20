@@ -31,7 +31,8 @@
 
 
     <div class="ideas-container space-y-6 my-6">
-        <div class="idea-container hover:shadow-card transition duration-150 ease-in cursor-pointer bg-white rounded-xl flex">
+        <div
+            class="idea-container hover:shadow-card transition duration-150 ease-in cursor-pointer bg-white rounded-xl flex">
             <div class="border-r border-gray-100 px-5 py-8">
                 <div class="text-center">
                     <div class="font-semibold text-2xl">12</div>
@@ -54,7 +55,8 @@
                     <h4 class="text-xl font-semibold">
                         <a href="" class="hover:underline">Lorem ipsum dolor sit amet.</a>
                     </h4>
-                    <div class="text-gray-600 mt-3 line-clamp-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum
+                    <div class="text-gray-600 mt-3 line-clamp-3">Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Harum
                         iusto laudantium aperiam sapiente mollitia quod similique nemo quas expedita ab deserunt, quasi
                         fugit voluptatibus sunt adipisci doloremque accusamus aut consequuntur! Explicabo, velit in.
                         Culpa dolores porro et autem ad. Quas illo numquam quam iusto nam corrupti. Temporibus vero
@@ -73,20 +75,26 @@
                             <div class="text-gray-900">3 Comments</div>
                             <div>&bull;</div>
                         </div>
-                        <div class="flex items-center space-x-2">
+                        <div class="flex items-center space-x-2" x-data="{ isOpen: false }">
                             <div
                                 class="bg-gray-200 text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 py-2 px-4 hover:bg-gray-300 transition duration-150 ease-in">
                                 Open</div>
-                            <button
+                            <button @click="isOpen = !isOpen"
                                 class="relative bg-gray-100 hover:bg-gray-200 rounded-full h-7 transition duration-150 ease-in border py-2 px-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16"
                                     fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
                                     <path style="color: rgba(39, 39, 39, 0.5)"
                                         d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                                 </svg>
-                                <ul class="absolute w-44 text-left font-semibold ml-8 bg-white shadow-dialog rounded-xl py-3">
-                                    <li><a href="#" class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Mark as Spam</a></li>
-                                    <li><a href="#" class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Delete Post</a></li>
+                                <ul x-cloak x-show.transition.origin.top.left="isOpen" @click.away="isOpen = false"
+                                    @keydown.escape.window="isOpen = false"
+                                    class="absolute w-44 text-left font-semibold ml-8 bg-white shadow-dialog rounded-xl py-3">
+                                    <li><a href="#"
+                                            class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Mark
+                                            as Spam</a></li>
+                                    <li><a href="#"
+                                            class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Delete
+                                            Post</a></li>
                                 </ul>
                             </button>
                         </div>
@@ -94,7 +102,8 @@
                 </div>
             </div>
         </div>
-        <div class="idea-container hover:shadow-card transition duration-150 ease-in cursor-pointer bg-white rounded-xl flex">
+        <div
+            class="idea-container hover:shadow-card transition duration-150 ease-in cursor-pointer bg-white rounded-xl flex">
             <div class="border-r border-gray-100 px-5 py-8">
                 <div class="text-center">
                     <div class="font-semibold text-2xl text-blue">66</div>
@@ -115,7 +124,8 @@
                     <h4 class="text-xl font-semibold">
                         <a href="" class="hover:underline">Lorem ipsum dolor sit amet consectetur.</a>
                     </h4>
-                    <div class="text-gray-600 mt-3 line-clamp-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum
+                    <div class="text-gray-600 mt-3 line-clamp-3">Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Harum
                         iusto laudantium aperiam sapiente mollitia quod similique nemo quas expedita ab deserunt, quasi
                         fugit voluptatibus sunt adipisci doloremque accusamus aut consequuntur! Explicabo, velit in.
                         Culpa dolores porro et autem ad. Quas illo numquam quam iusto nam corrupti. Temporibus vero
@@ -145,9 +155,14 @@
                                     <path style="color: rgba(39, 39, 39, 0.5)"
                                         d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                                 </svg>
-                                <ul class="absolute w-44 text-left font-semibold ml-8 bg-white shadow-dialog rounded-xl py-3 hidden">
-                                    <li><a href="#" class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Mark as Spam</a></li>
-                                    <li><a href="#" class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Delete Post</a></li>
+                                <ul
+                                    class="absolute w-44 text-left font-semibold ml-8 bg-white shadow-dialog rounded-xl py-3 hidden">
+                                    <li><a href="#"
+                                            class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Mark
+                                            as Spam</a></li>
+                                    <li><a href="#"
+                                            class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Delete
+                                            Post</a></li>
                                 </ul>
                             </button>
                         </div>
@@ -155,7 +170,8 @@
                 </div>
             </div>
         </div>
-        <div class="idea-container hover:shadow-card transition duration-150 ease-in cursor-pointer bg-white rounded-xl flex">
+        <div
+            class="idea-container hover:shadow-card transition duration-150 ease-in cursor-pointer bg-white rounded-xl flex">
             <div class="border-r border-gray-100 px-5 py-8">
                 <div class="text-center">
                     <div class="font-semibold text-2xl">33</div>
@@ -176,7 +192,8 @@
                     <h4 class="text-xl font-semibold">
                         <a href="" class="hover:underline">Lorem ipsum dolor sit amet.</a>
                     </h4>
-                    <div class="text-gray-600 mt-3 line-clamp-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum
+                    <div class="text-gray-600 mt-3 line-clamp-3">Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Harum
                         iusto laudantium aperiam sapiente mollitia quod similique nemo quas expedita ab deserunt, quasi
                         fugit voluptatibus sunt adipisci doloremque accusamus aut consequuntur! Explicabo, velit in.
                         Culpa dolores porro et autem ad. Quas illo numquam quam iusto nam corrupti. Temporibus vero
@@ -206,9 +223,14 @@
                                     <path style="color: rgba(39, 39, 39, 0.5)"
                                         d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                                 </svg>
-                                <ul class="absolute w-44 text-left font-semibold ml-8 bg-white shadow-dialog rounded-xl py-3 hidden">
-                                    <li><a href="#" class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Mark as Spam</a></li>
-                                    <li><a href="#" class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Delete Post</a></li>
+                                <ul
+                                    class="absolute w-44 text-left font-semibold ml-8 bg-white shadow-dialog rounded-xl py-3 hidden">
+                                    <li><a href="#"
+                                            class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Mark
+                                            as Spam</a></li>
+                                    <li><a href="#"
+                                            class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Delete
+                                            Post</a></li>
                                 </ul>
                             </button>
                         </div>
@@ -216,7 +238,8 @@
                 </div>
             </div>
         </div>
-        <div class="idea-container hover:shadow-card transition duration-150 ease-in cursor-pointer bg-white rounded-xl flex">
+        <div
+            class="idea-container hover:shadow-card transition duration-150 ease-in cursor-pointer bg-white rounded-xl flex">
             <div class="border-r border-gray-100 px-5 py-8">
                 <div class="text-center">
                     <div class="font-semibold text-2xl">22</div>
@@ -237,7 +260,8 @@
                     <h4 class="text-xl font-semibold">
                         <a href="" class="hover:underline">Lorem ipsum dolor sit amet.</a>
                     </h4>
-                    <div class="text-gray-600 mt-3 line-clamp-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum
+                    <div class="text-gray-600 mt-3 line-clamp-3">Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Harum
                         iusto laudantium aperiam sapiente mollitia quod similique nemo quas expedita ab deserunt, quasi
                         fugit voluptatibus sunt adipisci doloremque accusamus aut consequuntur! Explicabo, velit in.
                         Culpa dolores porro et autem ad. Quas illo numquam quam iusto nam corrupti. Temporibus vero
@@ -267,9 +291,14 @@
                                     <path style="color: rgba(39, 39, 39, 0.5)"
                                         d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                                 </svg>
-                                <ul class="absolute w-44 text-left font-semibold ml-8 bg-white shadow-dialog rounded-xl py-3 hidden">
-                                    <li><a href="#" class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Mark as Spam</a></li>
-                                    <li><a href="#" class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Delete Post</a></li>
+                                <ul
+                                    class="absolute w-44 text-left font-semibold ml-8 bg-white shadow-dialog rounded-xl py-3 hidden">
+                                    <li><a href="#"
+                                            class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Mark
+                                            as Spam</a></li>
+                                    <li><a href="#"
+                                            class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Delete
+                                            Post</a></li>
                                 </ul>
                             </button>
                         </div>
@@ -277,7 +306,8 @@
                 </div>
             </div>
         </div>{{-- Idea Container --}}
-        <div class="idea-container hover:shadow-card transition duration-150 ease-in cursor-pointer bg-white rounded-xl flex">
+        <div
+            class="idea-container hover:shadow-card transition duration-150 ease-in cursor-pointer bg-white rounded-xl flex">
             <div class="border-r border-gray-100 px-5 py-8">
                 <div class="text-center">
                     <div class="font-semibold text-2xl">22</div>
@@ -298,7 +328,8 @@
                     <h4 class="text-xl font-semibold">
                         <a href="" class="hover:underline">Lorem ipsum dolor sit amet.</a>
                     </h4>
-                    <div class="text-gray-600 mt-3 line-clamp-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum
+                    <div class="text-gray-600 mt-3 line-clamp-3">Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Harum
                         iusto laudantium aperiam sapiente mollitia quod similique nemo quas expedita ab deserunt, quasi
                         fugit voluptatibus sunt adipisci doloremque accusamus aut consequuntur! Explicabo, velit in.
                         Culpa dolores porro et autem ad. Quas illo numquam quam iusto nam corrupti. Temporibus vero
@@ -328,9 +359,14 @@
                                     <path style="color: rgba(39, 39, 39, 0.5)"
                                         d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                                 </svg>
-                                <ul class="absolute w-44 text-left font-semibold ml-8 bg-white shadow-dialog rounded-xl py-3 hidden">
-                                    <li><a href="#" class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Mark as Spam</a></li>
-                                    <li><a href="#" class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Delete Post</a></li>
+                                <ul
+                                    class="absolute w-44 text-left font-semibold ml-8 bg-white shadow-dialog rounded-xl py-3 hidden">
+                                    <li><a href="#"
+                                            class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Mark
+                                            as Spam</a></li>
+                                    <li><a href="#"
+                                            class="hover:bg-gray-100 px-5 py-3 transition block duration-150 ease-in">Delete
+                                            Post</a></li>
                                 </ul>
                             </button>
                         </div>
