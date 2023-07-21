@@ -19,19 +19,14 @@
             </div>
             <div class="w-full mx-2 md:mx-4">
                 <h4 class="text-xl font-semibold">
-                    <a href="" class="hover:underline">Lorem ipsum dolor sit amet.</a>
+                    <a href="" class="hover:underline">{{ $idea->title }}</a>
                 </h4>
-                <div class="text-gray-600 mt-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Harum
-                    iusto laudantium aperiam sapiente mollitia quod similique nemo quas expedita ab deserunt, quasi
-                    fugit voluptatibus sunt adipisci doloremque accusamus aut consequuntur! Explicabo, velit in.
-                    Culpa
-                </div>
+                <div class="text-gray-600 mt-3">{{ $idea->description }}</div>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mt-6">
                     <div class="flex items-center text-xs font-semibold space-x-2 text-gray-400">
-                        <div class="hidden md:block font-bold text-gray-800">John Doe</div>
+                        <div class="hidden md:block font-bold text-gray-800">{{ $idea->user->name }}</div>
                         <div class="hidden md:block ">&bull;</div>
-                        <div>10 hours ago</div>
+                        <div>{{ $idea->created_at->diffForHumans() }}</div>
                         <div>&bull;</div>
                         <div>Category 1</div>
                         <div>&bull;</div>
