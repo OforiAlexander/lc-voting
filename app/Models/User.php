@@ -47,4 +47,20 @@ class User extends Authenticatable
     {
         $this->hasMany(Idea::class);
     }
+
+    public function getAvatar()
+    {
+        $firstCharacter = $this->email[0];
+        $integerToUse = is_numeric($firstCharacter)
+        ? ord(strtolower($firstCharacter))- 21
+        : ord(strtolower($firstCharacter))- 96;
+
+        // $randomInteger = rand(1, 36 );
+        return 'https://www.gravatar.com/avatar/'
+        .md5($this->email)
+        .'?s=200'
+        .'&d=robohash&r='
+        .$integerToUse
+        .'.png';
+    }
 }
