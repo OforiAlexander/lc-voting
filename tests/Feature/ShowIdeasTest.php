@@ -16,7 +16,7 @@ class ShowIdeasTest extends TestCase
     use RefreshDatabase;
 
      /**
-     * @test
+     * @tests
      * @group feature
      */
     public function list_of_ideas_shows_on_main_page()
@@ -62,7 +62,7 @@ class ShowIdeasTest extends TestCase
         Considering</div>", false);
     }
 
-    /**@test */
+    /**@tests */
     public function single_idea_shows_correctly_on_the_show_page()
     {
         $user = User::factory()->create();
@@ -90,7 +90,7 @@ class ShowIdeasTest extends TestCase
         Open</div>", false);
     }
 
-    /**@test */
+    /**@tests */
     public function ideas_pagination_works()
     {
         $user = User::factory()->create();
@@ -125,7 +125,7 @@ class ShowIdeasTest extends TestCase
     }
 
 
-    /**@test */
+    /**@tests */
     public function same_idea_title_different_slugs()
     {
         $user = User::factory()->create();
