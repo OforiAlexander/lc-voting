@@ -7,20 +7,20 @@ Repository that is used in [this link](https://github.com/OforiAlexander/lc-voti
 ## Screenshots 
 
 ### Guest View
-![Laravel Voting System]()
+![Laravel Voting System](https://github.com/OforiAlexander/lc-voting/assets/110553162/52bbedc5-1c92-4936-94eb-ba4bfab99b67)
 
 - - - - -
 
 ### Dashboard View
-![Laravel Voting System]()
+![Laravel Voting System](https://github.com/OforiAlexander/lc-voting/assets/110553162/3e3eb8cb-773f-4acb-8de3-77374077358a)
 
 - - - - -
 ### Vote & Comments
-![Laravel Voting System]()
+![Laravel Voting System](https://github.com/OforiAlexander/lc-voting/assets/110553162/666d4e52-325e-4c7c-bdd3-744862c8e77b)
 
 - - - - -
 ### Comment Feature Image
-![Laravel Voting System]()
+![Laravel Voting System](https://github.com/OforiAlexander/lc-voting/assets/110553162/004a6cfd-ac43-4ec6-87d0-2531ff22bc1d)
 
 
 
